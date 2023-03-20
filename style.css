@@ -1,5 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap');
 
+:root {
+    --dateSize:60px;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
+}
+
+.calendar {
+}
+.month {
+}
+.month__title {
+}
+.month__name {
+}
+.month__content {
+}
+.month__date {
+    width: var(--dateSize);
+    height: var(--dateSize);
+    background: #ccc;
 }
