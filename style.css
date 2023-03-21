@@ -22,4 +22,7 @@ body {
     width: var(--dateSize);
     height: var(--dateSize);
     background: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
