@@ -17,6 +17,9 @@ body {
 .month__name {
 }
 .month__content {
+    display: inline-grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 2px;
 }
 .month__date {
     width: var(--dateSize);
