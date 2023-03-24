@@ -1,11 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap');
 
 :root {
-    --dateSize:60px;
+    --dateSize:50px;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
+}
+
+.head {
+    background: linear-gradient(to right, #FF621F, #AC25FF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.title {
+    font-size: 20vw;
+    font-weight: 900;
+    line-height: 1em;
+    margin-top: 0;
+    margin-bottom: 0px;
+}
+
+.desc {
+    display: flex;
+    justify-content: space-between;
+    font-size: 8vw;
+    text-transform: uppercase;
+    margin-bottom: 32px;
 }
 
 .calendar {
@@ -13,9 +36,18 @@ body {
 .month {
 }
 .month__title {
+    font-size: 32px;
+    color: #404040;
+    line-height: 1.2em;
+    margin-bottom: 16px;
 }
+
 .month__name {
+    color: #AA0E6C;
+    margin-bottom: 16px;
+    font-size: 22px;
 }
+
 .month__content {
     display: inline-grid;
     grid-template-columns: repeat(7, 1fr);
