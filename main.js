@@ -32,8 +32,9 @@ function renderMonth(monthNumber, year) {
     dom.calendar.appendChild(monthBox)
 }
 
-renderMonth(5, 2022)
-
+for (let i = 0; i < 12; i++) {
+renderMonth(i, 2023)
+}
 function buildMonthHead(title, monthName) {
     return `
         <div class="month__title">${title}</div>
