@@ -22,11 +22,19 @@ const monthNames = [
 ]
 const weekDayNames = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС']
 
-function renderMonth(month, year) {
 
+function renderMonth(monthNumber, year) {
+    const monthName = monthNames[monthNumber]
+    const monthHeadString = buildMonthHead('Заголовок', monthName)
+    const monthBox = document.createElement('div')
+    monthBox.className = 'month'
+    monthBox.innerHTML = monthHeadString
+    dom.calendar.appendChild(monthBox)
 }
 
-function buildMonthHeadHTML(title, monthName) {
+renderMonth(5, 2022)
+
+function buildMonthHead(title, monthName) {
     return `
         <div class="month__title">${title}</div>
         <div class="month__name">${monthName}</div>
