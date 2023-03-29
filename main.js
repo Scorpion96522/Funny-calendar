@@ -20,4 +20,16 @@ const monthNames = [
     'НОЯБРЬ',
     'ДЕКАБРЬ',
 ]
-const weekMonthDays = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС',]
+const weekDayNames = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС']
+
+function renderMonth(month, year) {
+
+}
+
+function buildMonthHeadHTML(title, monthName) {
+    return `
+        <div class="month__title">${title}</div>
+        <div class="month__name">${monthName}</div>
+
+    `
+}
