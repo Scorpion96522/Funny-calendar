@@ -94,13 +94,17 @@ function renderMonth(monthIdx, year) {
     dom.calendar.appendChild(monthBox)
 }
 
-for (let i = 0; i < 12; i++) {
+for (let i = 0; i < 1; i++) {
 renderMonth(i, 2023)
 }
 function buildMonthHead(title, monthName) {
     return `
         <div class="month__title">${title}</div>
         <div class="month__name">${monthName}</div>
-
     `
+}
+
+function renderCell(content, isAccent = false) {
+    const cls = isAccent ? 'month__date month__date_accent' : 'month__date'
+    return `<div class="${cls}>${content}</div>`
 }
