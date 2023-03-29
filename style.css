@@ -34,6 +34,9 @@ body {
 .calendar {
     text-transform: uppercase;
     font-weight: 900;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 32px;
 }
 
 .month {
