@@ -82,7 +82,7 @@ const months = [
         days: 31
     },
 ]
-const weekDayNames = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС']
+
 
 
 function renderMonth(monthIdx, year) {
@@ -96,12 +96,28 @@ function renderMonth(monthIdx, year) {
 
 for (let i = 0; i < 1; i++) {
 renderMonth(i, 2023)
+renderWeekDayNames()
 }
 function buildMonthHead(title, monthName) {
     return `
         <div class="month__title">${title}</div>
         <div class="month__name">${monthName}</div>
     `
+}
+
+
+function buildMonth(monthData ) {
+    
+}
+
+function renderWeekDayNames() {
+    const weekDayNames = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС']
+    const daysNames = []
+    for (let i = 0; i < 12; i++) {
+        const dayNameTeg = `<div class="month__date month__date_accent">${weekDayNames[i]}</div>`
+        daysNames.push(dayNameTeg)
+    }
+    console.log(daysNames)
 }
 
 function renderCell(content, isAccent = false) {
