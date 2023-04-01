@@ -90,7 +90,9 @@ function renderMonth(monthIdx, year) {
     const monthHeadString = buildMonthHead(month.title, month.name)
     const monthBox = document.createElement('div')
     monthBox.className = 'month'
-    monthBox.innerHTML = monthHeadString
+    monthBox.innerHTML = monthHeadString + `
+    <div class="month__content">${renderWeekDayNames()}</div>
+    `
     dom.calendar.appendChild(monthBox)
 }
 
@@ -113,11 +115,11 @@ function buildMonth(monthData ) {
 function renderWeekDayNames() {
     const weekDayNames = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС']
     const daysNames = []
-    for (let i = 0; i < 12; i++) {
+    for (let i = 0; i < 7; i++) {
         const dayNameTeg = `<div class="month__date month__date_accent">${weekDayNames[i]}</div>`
         daysNames.push(dayNameTeg)
     }
-    console.log(daysNames)
+    return daysNames.join('')
 }
 
 function renderCell(content, isAccent = false) {
