@@ -92,16 +92,16 @@ function renderMonth(monthIdx, year) {
     monthBox.className = 'month'
     let monthContentHTML = ['<div class="month__content">']
     monthContentHTML.push(renderWeekDayNames())
+    monthContentHTML.push(renderDates(year, monthIdx, month.days))
     monthContentHTML.push('</div>')
-
 
     console.log(monthContentHTML)
     monthBox.innerHTML = monthContentHTML.join('')
     dom.calendar.appendChild(monthBox)
 }
 
-for (let i = 0; i < 1; i++) {
-renderMonth(3, 2023)
+for (let i=0; i<1; i++) {
+renderMonth(1, 2023)
 }
 
 function buildMonthHead(title, monthName) {
@@ -116,27 +116,26 @@ function renderWeekDayNames() {
     const weekDayNames = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС']
     const daysNames = []
     for (let i = 0; i < 7; i++) {
-        const dayNameTeg = `<div class="month__date month__date_accent">${weekDayNames[i]}</div>`
-        daysNames.push(dayNameTeg)
+        const dayNameTag = `<div class="month__date month__date_accent">${weekDayNames[i]}</div>`
+        daysNames.push(dayNameTag)
     }
     return daysNames.join('')
 }
 
 
 function renderDates(year, month, daysCount) {
-    const date = new Date(year, month, 1 );
+    const date = new Date(year, month, 1)
     const datesHTML = []
-    let day = 1;
-    console.log(date.getDay());
+    let day = 1
+    console.log(date.getDay())
     while(day <= daysCount) {
         const dateHTML = renderDate(day)
         datesHTML.push(dateHTML)
         day ++
     }
-return datesHTML.join('')
-    
+    return datesHTML.join('')
 }
-const monthIdx = 3
+const monthIdx = 1
 const monthDaysCount = months[monthIdx].days
 renderDates(2023,monthIdx, monthDaysCount)
 
