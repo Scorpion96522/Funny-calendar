@@ -90,16 +90,20 @@ function renderMonth(monthIdx, year) {
     const monthHeadString = buildMonthHead(month.title, month.name)
     const monthBox = document.createElement('div')
     monthBox.className = 'month'
-    monthBox.innerHTML = monthHeadString + `
-    <div class="month__content">${renderWeekDayNames()}</div>
-    `
+    let monthContentHTML = ['<div class="month__content">']
+    monthContentHTML.push(renderWeekDayNames())
+    monthContentHTML.push('</div>')
+
+
+    console.log(monthContentHTML)
+    monthBox.innerHTML = monthContentHTML.join('')
     dom.calendar.appendChild(monthBox)
 }
 
 for (let i = 0; i < 1; i++) {
-renderMonth(i, 2023)
-renderWeekDayNames()
+renderMonth(3, 2023)
 }
+
 function buildMonthHead(title, monthName) {
     return `
         <div class="month__title">${title}</div>
@@ -107,10 +111,6 @@ function buildMonthHead(title, monthName) {
     `
 }
 
-
-function buildMonth(monthData ) {
-    
-}
 
 function renderWeekDayNames() {
     const weekDayNames = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС']
@@ -122,7 +122,25 @@ function renderWeekDayNames() {
     return daysNames.join('')
 }
 
-function renderCell(content, isAccent = false) {
+
+function renderDates(year, month, daysCount) {
+    const date = new Date(year, month, 1 );
+    const datesHTML = []
+    let day = 1;
+    console.log(date.getDay());
+    while(day <= daysCount) {
+        const dateHTML = renderDate(day)
+        datesHTML.push(dateHTML)
+        day ++
+    }
+return datesHTML.join('')
+    
+}
+const monthIdx = 3
+const monthDaysCount = months[monthIdx].days
+renderDates(2023,monthIdx, monthDaysCount)
+
+function renderDate(content, isAccent = false) {
     const cls = isAccent ? 'month__date month__date_accent' : 'month__date'
     return `<div class="${cls}>${content}</div>`
 }
